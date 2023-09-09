@@ -1,0 +1,120 @@
+body{
+  position: relative;
+}
+header{
+    
+  .header-navigation-container{
+    background: $primaryColor;
+    width: 100vw;;
+    z-index: 100;
+    padding: 15px 0;
+    position: fixed;
+  }
+  .navigation{
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a{
+      color: $textColor;
+      font-weight: 500;
+      @include fontSize-n-lineHeight(16px, 22px);
+    }
+    &-right-side{
+      nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        ul{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-left: 30px;
+            a{
+              font-weight: 500;
+              position: relative;
+              &::after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+                background-color: $secondaryColor;
+                transform-origin: bottom left;
+                transition: transform 0.25s ease-out;
+              }
+              &:hover, &.active{
+                color: $greyColor;
+                &::after, &.active::after{
+                  transform: scaleX(1);
+                  transform-origin: bottom left;
+                }
+              }
+            }
+            
+          }
+          li{
+            margin-left: 20px;
+          }
+
+        }
+      
+    }
+  }
+  .hero-banner-container{
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-banner{
+    margin-top: 65px;
+    background: url('../images/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100%;
+    height: 100%;
+    width: 100%;
+    // -webkit-transition: all 0.3s ease-in-out;
+    // animation: scaleBg 5s forwards;
+    // animation-timing-function: linear;
+   
+    // @keyframes scaleBg {
+    //   0%   {background-size: 100%;}
+    //   100%   {background-size: 105%;}
+    // }
+    .container{
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    &-left-side{
+      padding: 120px 0;
+      &_content{
+        h1{
+          @include fontSize-n-lineHeight(46px, 52px);
+          margin-bottom: 20px;
+          color: $secondaryColor;
+        }
+        p{
+          @include fontSize-n-lineHeight(20px, 24px);
+          margin-bottom: 10px;
+        }
+        &-btns{
+          a{
+            margin-top: 20px;
+            &:first-child{
+              @include do-btn(120px,#333, #333, $primaryColor);
+              margin-right: 20px;
+            }
+            &:last-child{
+              @include do-btn(120px,$primaryColor, $primaryColor, $secondaryColor);
+              color: $secondaryColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}

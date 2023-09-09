@@ -1,0 +1,12 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/reset";
+@import "./utils/base";
+//MAIN
+@import "./main/header";
+@import "./main/main";
+@import "./main/product";
+@import "./main/footer";
+@import "./main/login";
+@import "./main/signup";
+@import "./main/clothes-accessories";

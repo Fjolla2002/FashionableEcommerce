@@ -1,0 +1,21 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: $dosis;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    max-width: 940px;
+    margin: 0 auto;
+}
+svg,img{
+    max-width: 100%;
+    height: auto;
+}
+.full-block{
+    float: left;
+    width: 100%;
+}

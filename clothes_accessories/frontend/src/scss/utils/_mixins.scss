@@ -1,0 +1,23 @@
+@mixin fontSize-n-lineHeight($font-size, $line-height-px){
+    $line-height: calc($line-height-px / $font-size);
+    line-height: $line-height+em;
+    font-size: $font-size;
+}
+@mixin do-btn($btn-width,$color-on-hover, $btn-bg-primary, $btn-bg-secondary){
+    float: left;
+    width: $btn-width;
+    padding: 16px 0;
+    color: $primaryColor;
+    background-color: $btn-bg-primary;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    text-align: center;
+    &:hover{
+        color: $color-on-hover;
+        background: $btn-bg-secondary;
+        transform: scale(1.03);
+    }
+    &:active{
+        transform: scale(0.97);
+    }
+}
